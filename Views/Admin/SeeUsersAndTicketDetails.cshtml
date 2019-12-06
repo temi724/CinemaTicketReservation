@@ -1,0 +1,118 @@
+﻿@using Easytickets.com.Models
+@using Easytickets.com.ViewModel
+@{
+    ViewBag.Title = "Reservation";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Reservation</h2>
+<section class="movies">
+    <div class="container">
+        <h>Your movie reservation</h>
+        <table class="table" id="a">
+            <thead>
+                <tr>
+                    <th>User Name</th>
+                    <th>Movie Name</th>
+                    <th>Location</th>
+                    <th>Time</th>
+                    <th>Ticket ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var movie in ViewBag.BookedMovies as IEnumerable<DataViewModel>)
+                {
+                    <tr>
+                        <td>@movie.Name</td>
+                        <td>@movie.MovieName</td>
+                        <td>@movie.ShowingIn</td>
+                        <td>@movie.Time</td>
+                        <td> @movie.TicketID
+                        </td>
+                    </tr>
+
+                }
+
+            </tbody>
+        </table>
+    </div>
+</section>
+<section class="movies">
+    <div class="container">
+        <h>Your music reservation</h>
+        <table class="table" id="b">
+            <thead>
+                <tr>
+                    <th>User Name</th>
+                    <th>Artist</th>
+                    <th>Location</th>
+                    <th>Time</th>
+                    <th>Ticket ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var music in ViewBag.music as IEnumerable<DataViewModel>)
+                {
+                    <tr>
+                        <td>@music.Name</td>
+                        <td>@music.Artist</td>
+                        <td>@music.ShowingIn</td>
+                        <td>@music.Time</td>
+                        <td> @music.TicketID
+                        </td>
+                    </tr>
+
+                }
+
+            </tbody>
+
+
+        </table>
+    </div>
+</section>
+<section class="sport">
+    <div class="container">
+        <h>Your Sports reservation</h>
+        <table class="table" id="c">
+            <thead>
+                <tr>
+                    <th>User Name</th>
+                    <th>Sport Name</th>
+                    <th>Location</th>
+                    <th>Time</th>
+                    <th>Ticket ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var sport in ViewBag.sport as IEnumerable<DataViewModel>)
+                {
+                    <tr>
+                        <td>@sport.Name</td>
+                        <td>@sport.SportName</td>
+                        <td>@sport.ShowingIn</td>
+                        <td>@sport.Time</td>
+                        <td> @sport.TicketID
+                        </td>
+                    </tr>
+
+                }
+
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<script>
+    $(document).ready(function () {
+        $('#a').DataTable({
+
+
+        });
+        $('#b').DataTable({
+
+        });
+        $('#c').DataTable({
+
+        });
+    });
+    </Script>

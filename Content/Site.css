@@ -1,0 +1,53 @@
+﻿body {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size:13px;
+}
+.register {
+    background-image: url('/Images/krists-luhaers-AtPWnYNDJnM-unsplash.jpg');
+    /* size: landscape; */
+    background-size: cover;
+    height: 22rem;
+    background-position: center;
+}
+/*specifies new height for slide images*/
+.h-new-height {
+    height: 40rem !important;
+}
+.movie-box {
+    /*width: 1294px!important;*/
+}
+.available-movies {
+background-color:black;
+}
+.available-sports {
+    background-color: black;
+}
+.available-movies-heading {
+    color: white;
+    /* size: 27px; */
+    font-size: 30px;
+    font-weight: 900;
+    text-align: center;
+}
+.available-movies-text {
+color:white;
+text-align:center;
+font-size:12px;
+margin-top:10px;
+margin-bottom:13px;
+
+}
+.available-music-heading {
+    color: black;
+    /* size: 27px; */
+    font-size: 30px;
+    font-weight: 900;
+    text-align: center;
+}
+.available-sports-heading {
+    color: white;
+    /* size: 27px; */
+    font-size: 30px;
+    font-weight: 900;
+    text-align: center;
+}

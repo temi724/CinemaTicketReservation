@@ -1,0 +1,107 @@
+﻿
+@{
+    ViewBag.Title = "User";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+
+@* available movies *@
+<section class="available-movies">
+    <div class="container">
+        <p class="available-movies-heading">Book a movie Ticket(Now)</p>
+        <div class="container">
+            <div class="row">
+                @foreach (var movie in ViewBag.availableMoviesNow as IEnumerable<Easytickets.com.Models.Movie>)
+                {
+
+                    <div class="col-sm-3">
+
+                        <div class="card">
+                            <img src="@movie.Image" alt="" class="card-img-top" />
+                            <div class="card-body">
+
+                                <p class="">@movie.MovieName</p>
+                                <p class="">@movie.ShowingIn</p>
+                                <p class="">@movie.Time</p>
+                                <a href="@Url.Action("BookMovieTicket","Ticket", new { ID = movie.ID, ty=movie.MovieName })" class="btn btn-outline-danger">Book Ticket</a>
+
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+            @*<p class="available-movies-text">
+                    Please note that you will only get popcorn for movies above N5,000
+                </p>*@
+
+        </div>
+    </div>
+</section>
+<section class="available-music">
+    <div class="container">
+        <p class="available-music-heading">Book a Song Ticket(Now)</p>
+        <div class="container">
+            <div class="row">
+                @foreach (var songs in ViewBag.availableSongs as IEnumerable<Easytickets.com.Models.Music>)
+                {
+
+                    <div class="col-sm-3">
+                        <div class="card">
+                            <img src="@songs.Image" alt="" class="card-img-top" />
+                            <div class="card-body">
+                                <p class="">@songs.Artist</p>
+                                <p class="">@songs.ShowingIn</p>
+                                <p class="">@songs.Time</p>
+                                <a href="@Url.Action("BookMusicTicket","Ticket", new { ID = songs.ID, ty=songs.Artist })" class="btn btn-outline-danger">Book Ticket</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+            @*<p class="available-movies-text">
+                Please note that you will only get popcorn for movies above N5,000
+            </p>*@
+
+        </div>
+    </div>
+</section>
+@* Sports *@
+<section class="available-sports">
+    <div class="container">
+        <p class="available-sports-heading ">Now Showing (Sports)</p>
+        <div class="container">
+            <div class="row">
+                @foreach (var sports in ViewBag.availableSports as IEnumerable<Easytickets.com.Models.Sport>)
+                {
+
+                    <div class="col-sm-3">
+                        <div class="card">
+                            <img src="@sports.Image" alt="" class="card-img-top" />
+                            <div class="card-body">
+
+                                <p class="">@sports.SportName</p>
+                                <p class="">@sports.ShowingIn</p>
+                                <p class="">@sports.Type</p>
+                                <p class="">@sports.Time</p>
+                                <a href="@Url.Action("BookSportTicket","Ticket", new { ID = sports.ID, })" class="btn btn-outline-danger">Book Ticket</a>
+
+
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+            <p class="available-movies-text">
+                Please note that you will only get popcorn for sport tickets
+            </p>
+
+        </div>
+    </div>
+</section>
+
+
+
+
